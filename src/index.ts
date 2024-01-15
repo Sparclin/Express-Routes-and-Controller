@@ -1,6 +1,5 @@
 /**untuk import modul dari express */
 import express, {Request,Response} from 'express'
-import { validateCube } from './middleware/validateCube';
 import routeBangunDatar from "./routes/bangunDatar";
 import routeBangunRuang from "./routes/bangunRuang";
 
@@ -82,7 +81,7 @@ app.get(`/konversi/:suhuAwal`, (request : Request, response : Response) => {
 });
 
 /**Create request for count volume of long cube */
-app.post(`/balok`, validateCube, (req : Request, res : Response) => {
+app.post(`/balok`,/**Validatenya(ValidateCube) di hapus makanya error */ (req : Request, res : Response) => {
     /**Read panjang,lebar,tinggi */
 
     let panjang : number = Number(req.body.panjang);
